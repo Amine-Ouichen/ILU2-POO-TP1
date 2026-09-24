@@ -59,10 +59,8 @@ public class Village {
 	
 	private class Marche{
 		private Etal[] etals;
-		private int nbEtalsMax;
 		
 		private Marche(int nbEtalsMax) {
-			this.nbEtalsMax=nbEtalsMax;
 			etals = new Etal[nbEtalsMax];
 		}
 		
@@ -71,8 +69,14 @@ public class Village {
 		}
 		
 		private int trouverEtalLibre() {
-			
+			int EtalLibre=-1;
+			for(int i=0;i<etals.length;i++) {
+				if(!etals[i].isEtalOccupe()) {
+					EtalLibre=i;
+				}
+			}
+			return EtalLibre;
 		}
-		}
+		
 	}
 }

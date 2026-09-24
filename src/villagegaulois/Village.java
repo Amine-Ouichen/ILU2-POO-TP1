@@ -1,4 +1,4 @@
-package villagegaulois;
+ package villagegaulois;
 
 import personnages.Chef;
 import personnages.Gaulois;
@@ -55,5 +55,24 @@ public class Village {
 			}
 		}
 		return chaine.toString();
+	}
+	
+	private class Marche{
+		private Etal[] etals;
+		private int nbEtalsMax;
+		
+		private Marche(int nbEtalsMax) {
+			this.nbEtalsMax=nbEtalsMax;
+			etals = new Etal[nbEtalsMax];
+		}
+		
+		private void utiliserEtal(int indiceEtal, Gaulois vendeur,String produit, int nbProduit) {
+			etals[indiceEtal].occuperEtal(vendeur, produit, nbProduit);
+		}
+		
+		private int trouverEtalLibre() {
+			
+		}
+		}
 	}
 }
